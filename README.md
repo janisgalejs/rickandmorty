@@ -22,6 +22,16 @@ Open your browser, enter APP_URL from .env file in your address bar and project 
 
 Enjoy!
 
+## API
+
+Route for fetching characters list with pagination:
+
+<code>http://localhost/api/character?page=1</code>
+
+Route for fetching single character:
+
+<code>http://localhost/api/character/1</code>
+
 ## ADDITIONAL
 
 If there are errors for directory permissions, laravel/storage CHMOD should be 755.
