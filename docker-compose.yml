@@ -1,0 +1,29 @@
+services:
+
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./laravel:/var/www/html
+    depends_on:
+      - php
+    networks:
+      - laravel
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./laravel:/var/www/html
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    driver: bridge
